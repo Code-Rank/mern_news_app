@@ -1,69 +1,65 @@
 
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import Navbar from './components/Navbar.js';
-import Newitem from "./components/NewItem.js";
+
 import New from './components/New.js'
-/* import Newslide from "./components/Newslide.js";
-import Loading from "./components/Loading.js"; */
-import TopLoading from "./components/TopLoading.js";
+import Footer from "./components/Footer.js";
+
 import { Routes, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 
 
 
-class App extends Component {
+const App = () => {
 
- state={
-  progress:0,
- };
- setProgress=(progress)=>{
-  this.setState({
-    progress:progress,
-  });
- }
 
-  render() {
-    return (
-      <>
+  const [progress, setProgress] = useState(0);
 
-<LoadingBar
+
+
+  return (
+    <>
+
+      <LoadingBar
         color='#f11946'
-        progress={this.state.progress}
-        
+        progress={progress}
+
       />
-        <Navbar new="hello" />
+      <Navbar new="hello" />
 
-        <div className="container " style={{ marginTop: "10%",  }} >
+      <div className="container " style={{ marginTop: "5%", }} >
+        <h2>Top headlines</h2>
 
-
-          <div class="row">
-            
-
-              <Routes>
-                <Route path="/" element={<New setProgress={this.setProgress} key="home" category="general" country="in" />}></Route>
-                <Route exat path="/business" element={<New setProgress={this.setProgress} key="business" category="business" country="in" />}></Route>
-                <Route exat path="/entertainment" element={<New setProgress={this.setProgress}key="entertainment" category="entertainment" country="in" />}></Route>
-                <Route exat path="/general" element={<New setProgress={this.setProgress} key="general" category="general" country="in" />}></Route>
-                <Route exat path="/health" element={<New setProgress={this.setProgress} key="health" category="health" country="in" />}></Route>
-                <Route exat path="/science" element={<New setProgress={this.setProgress} key="science" category="science" country="in" />}></Route>
-                <Route exat path="/sports" element={<New setProgress={this.setProgress} key="sports" category="sports" country="in" />}></Route>
-                <Route exat path="/technology" element={<New setProgress={this.setProgress} key="technology" category="technology" country="in" />}></Route>
-              </Routes>
+        <div className="row my-4">
 
 
-
-            </div>
-          </div>
-        
+          <Routes>
+            <Route path="/" element={<New setProgress={setProgress} key="home" category="general" country="in" />}></Route>
+            <Route exat path="/business" element={<New setProgress={setProgress} key="business" category="business" country="in" />}></Route>
+            <Route exat path="/entertainment" element={<New setProgress={setProgress} key="entertainment" category="entertainment" country="in" />}></Route>
+            <Route exat path="/general" element={<New setProgress={setProgress} key="general" category="general" country="in" />}></Route>
+            <Route exat path="/health" element={<New setProgress={setProgress} key="health" category="health" country="in" />}></Route>
+            <Route exat path="/science" element={<New setProgress={setProgress} key="science" category="science" country="in" />}></Route>
+            <Route exat path="/sports" element={<New setProgress={setProgress} key="sports" category="sports" country="in" />}></Route>
+            <Route exat path="/technology" element={<New setProgress={setProgress} key="technology" category="technology" country="in" />}></Route>
+          </Routes>
 
 
 
+        </div>
+      </div>
+
+   <Footer />
+      
 
 
 
 
-      </>
-    );
-  }
+
+
+
+    </>
+  );
+
 }
 export default App;

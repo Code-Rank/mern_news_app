@@ -1,10 +1,10 @@
 import LoadingBar from 'react-top-loading-bar';
-import { Component } from 'react';
+import React from 'react';
 
-class TopLoading extends Component{
+const TopLoading=()=>{
 
     
-    render(){
+
         return(<>
         <LoadingBar
         color='#f11946'
@@ -12,6 +12,6 @@ class TopLoading extends Component{
         
       />
         </>);
-    }
+  
 }
 export default TopLoading;

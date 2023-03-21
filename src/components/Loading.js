@@ -1,9 +1,9 @@
 
-import { Component } from "react";
+
 import loading from "../loading.gif";
 
-class Loading extends Component {
-  render() {
+const Loading=()=>  {
+ 
     return (<>
       <div className="container d-flex justify-content-center">
         <div className="row">
@@ -13,7 +13,7 @@ class Loading extends Component {
 
 
     </>);
-  }
+ 
 }
 
 export default Loading;

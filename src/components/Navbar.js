@@ -1,9 +1,9 @@
-import { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-class Navbar extends Component {
+const Navbar =()=>{
 
-    render() {
+   
         return (
 
             <>
@@ -41,17 +41,17 @@ class Navbar extends Component {
                                     <a className="nav-link disabled" to="/" tabIndex="-1" aria-disabled="true">Link</Link>
                                 </li> */}
                             </ul>
-                            <form className="d-flex">
+                            {/* <form className="d-flex">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                                 <button className="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+                            </form> */}
                         </div>
                     </div>
                 </nav>
 
             </>
         );
-    }
+    
 }
 
 export default Navbar;
